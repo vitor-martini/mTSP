@@ -6,15 +6,16 @@ from iterated_local_search import ILS
 from variable_neighborhood_search import VNS
 from large_neighborhood_search import LNS
 from sys import setrecursionlimit
+import sys
 
 def main():
-    rounds = 1
-    export_results_option = False 
-    print_rounds = True
-    print_solution_option = True
-    print_routes_option = True
-    print_execution = True 
-    plot_solution_option = False  
+    rounds = int(sys.argv[1])
+    export_results_option = False if sys.argv[2] == 0 else True 
+    print_rounds = False if sys.argv[3] == 0 else True 
+    print_solution_option = False if sys.argv[4] == 0 else True 
+    print_routes_option = False if sys.argv[5] == 0 else True 
+    print_execution = False if sys.argv[6] == 0 else True 
+    plot_solution_option = False if sys.argv[7] == 0 else True 
 
     input_string = ('1 -> SA\n' +
                     '2 -> GRASP \n' +
